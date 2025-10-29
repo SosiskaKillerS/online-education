@@ -1,10 +1,11 @@
-from sqlalchemy import Column, TEXT, String
+from sqlalchemy import Column, TEXT, String, BigInteger
 from sqlalchemy.orm import relationship
 from app.core.db import Base
 from app.models.user_course import user_course
 
 class User(Base):
     __tablename__ = "user"
+    id = Column(BigInteger, primary_key=True)
     first_name = Column(String(100), nullable=False)
     middle_name = Column(String(100), nullable=True)
     last_name = Column(String(100), nullable=False)
